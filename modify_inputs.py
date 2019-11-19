@@ -50,14 +50,3 @@ for this_region in regions:
     region_App_temp.to_csv(str(folder_path +'/'+this_region+'_output.csv'), index=False)
 
 print('Finished! Check your files.')
-
-
-
-
-
-        
-
-        # Create a data frame of AT(year, month, day, dew_temp)
-
-        # write the dataframe in a csv file
-

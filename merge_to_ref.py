@@ -18,8 +18,14 @@ col_names = ['year', 'month', 'day', 'tmax', 'an_max', '5th', '6th', 'tmin','an_
 df_ref = pd.read_csv(sys.argv[1], header=None, delimiter=r"\s+", names=col_names)
 df_inp = pd.read_csv(sys.argv[2])
 
+name = (os.path.split(sys.argv[1])[1]).split('.')[0]
+path = (os.path.split(sys.argv[1])[0])
 df_joined = df_ref.merge(df_inp, on=['year', 'month', 'day'])
-df_joined.to_csv('/Users/babak.jfard/python/NCH_codes/jagedish/test.csv', index=False,
- header=None, sep=' ')
-print("done!")
+
+output_file_name = path+'/'+name+'_merged.txt'
+df_joined.to_csv(output_file_name, index=False, header=None, sep=' ')
+
+print('Done!')
+print('file merged into --> ',output_file_name)
+
 

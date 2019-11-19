@@ -48,5 +48,6 @@ for this_region in regions:
         region_App_temp = region_App_temp.append(df2)
     region_App_temp.sort_values(by=['year', 'month', 'day'], inplace=True)    
     region_App_temp.to_csv(str(folder_path +'/'+this_region+'_output.csv'), index=False)
+    print('modified file: -->', str(folder_path +'/'+this_region+'_output.csv'))
 
 print('Finished! Check your files.')
